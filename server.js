@@ -9,7 +9,7 @@ app.get('/hello', (req, res) => {
     console.log('Headers:', req.headers);
     console.log('Method:', req.method);
     console.log('\n\n');
-    res.send('Received POST request! \n');
+    res.send('Received GET request! \n');
 })
 
 app.post('/hello', (req, res) => {
