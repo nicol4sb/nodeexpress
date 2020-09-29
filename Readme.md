@@ -1,8 +1,6 @@
-Startup the server : node server.js
+# Set of JS experiments related to system design
 
-Send an HTTP request to the server :
-Simple GET :
-curl localhost:3000/hello
+Demonstrating concepts suchs as
 
-More elaborate - POST - curl will choose to issue a POST request based on the presence of a body :
-curl --header 'content-type: application/json' localhost:3000/hello --data '{"foo": "bar"}'
+* network protocols and specifically HTTP
+* caching
