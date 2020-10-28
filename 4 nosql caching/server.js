@@ -3,6 +3,7 @@ const express = require('express');
 
 const app = express();
 const cache = {};
+const redis = require('redis').createClient();
 
 app.get('/nocache/index.html', (req, res) => {
     database.get('index.html', page => {
@@ -11,14 +12,16 @@ app.get('/nocache/index.html', (req, res) => {
 });
 
 app.get('/withcache/index.html', (req, res) => {
-    if('index.html' in cache){
-        res.send(cache['index.html']);
-        return;
-    }
+    redis.get('index.html', (err, redisRes) => {
+        if(redisRes){
+            res.send(redisRes);
+            return;
+        }
 
-    database.get('index.html', page => {
-        cache['index.html'] = page;
-        res.send(page);
+        database.get('index.html', page => {
+            redis.set('index.html', page, 'EX', 10);
+            res.send(page);
+        });
     });
 });
 

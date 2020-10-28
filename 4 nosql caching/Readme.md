@@ -1,4 +1,11 @@
-# Demo of basic caching
+# Demo of redis based caching
+
+Install redis :
+brew install redis
+Start redis :
+redis-server /usr/local/etc/redis.conf
+
+also npm install redis
 
 Startup the server :
     node server.js
