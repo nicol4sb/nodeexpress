@@ -6,6 +6,8 @@ Demonstrating concepts suchs as
 * caching
 * proxies
 * nosql db / redis
+* rate limiting
+* pub/sub simple demo
 
 # reminders of useful network commands
 dig google.com - dns infos
