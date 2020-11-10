@@ -6,6 +6,7 @@ function reduce(key, values){
 }
 
 const reduceInputs = mapReduce.getReduceInputs();
+
 for(const input of reduceInputs){
     reduce(input[0],input[1]);
 }

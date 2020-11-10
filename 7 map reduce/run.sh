@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # clean up from a previous run
-rm -f host*/map_results/*.txt map_results/*.txt reduce_result/*
+rm -f host*/map_results/*.txt map_results/*.txt reduce_results/*
 
 # run the map test on all hosts
 HOST=host1 node map.js &
@@ -17,4 +17,4 @@ HOSTS=host1,host2 node shuffle.js
 node reduce.js
 
 # view the final result 
-cat reduce_result/results.txt
+cat reduce_results/result.txt

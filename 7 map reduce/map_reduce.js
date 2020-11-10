@@ -17,13 +17,14 @@ function getReduceInputs(){
     for (const fileName of fileNames){
         const key = fileName.split('.')[0];
         const content = fs.readFileSync(`map_results/${fileName}`,'utf-8');
-        inputs.push(key, content.split('\n').filter(value => value !== ''));
+        inputs.push([key, content.split('\n').filter(value => value !== '')]);
     }
+
     return inputs;
 }
 
 function emitReduceResults(key, value){
-    const fileName = `map_results/result.txt`;
+    const fileName = `reduce_results/result.txt`;
     fs.appendFileSync(fileName, key + ' ' + value + '\n');
 }
 
