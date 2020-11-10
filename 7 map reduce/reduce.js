@@ -2,7 +2,7 @@ const mapReduce = require('./map_reduce');
 
 function reduce(key, values){
     const valueCount = values.length;
-    mapReduce.emitReduceResult(key, valueCount);
+    mapReduce.emitReduceResults(key, valueCount);
 }
 
 const reduceInputs = mapReduce.getReduceInputs();

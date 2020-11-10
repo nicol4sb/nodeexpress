@@ -14,7 +14,7 @@ function emitMapResult(key, value){
 function getReduceInputs(){
     const fileNames = fs.readdirSync(`map_results`,`utf-8`);
     const inputs = [];
-    for (const fileName in fileNames){
+    for (const fileName of fileNames){
         const key = fileName.split('.')[0];
         const content = fs.readFileSync(`map_results/${fileName}`,'utf-8');
         inputs.push(key, content.split('\n').filter(value => value !== ''));
